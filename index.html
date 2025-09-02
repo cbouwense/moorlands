@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moorlands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-purple: #f3e9f5;
+            --dark-purple: #4c2c54;
+            --text-color: #333;
+            --heading-font: 'Playfair Display', serif;
+            --body-font: 'Raleway', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('https://placehold.co/1200x800/d3c2d6/4c2c54?text=Hero+Image'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--heading-font);
+            font-size: 4rem;
+            margin-bottom: 0;
+        }
+        
+        .hero h2 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        /* Headline Section */
+        .headline-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .headline-section h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 20px;
+        }
+
+        .headline-section .subline {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border: 2px solid var(--dark-purple);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cta-button.primary {
+            background-color: var(--dark-purple);
+            color: #fff;
+        }
+
+        .cta-button.primary:hover {
+            background-color: #fff;
+            color: var(--dark-purple);
+        }
+
+        .cta-button.secondary {
+            background-color: #fff;
+            color: var(--dark-purple);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--dark-purple);
+            color: #fff;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+        }
+
+        .services-section h2 {
+            font-family: var(--heading-font);
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            margin-top: 0;
+            font-style: italic;
+        }
+        
+        .service-card ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .service-card ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Rooted Section */
+        .rooted-section {
+            background-color: var(--light-purple);
+            padding: 80px 0;
+        }
+
+        .rooted-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .rooted-content img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .rooted-text {
+            width: 50%;
+        }
+
+        .rooted-text h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+            margin-top: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--dark-purple);
+        }
+        
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--body-font);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group small {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--dark-purple);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #6a406c;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-purple);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rooted-content {
+                flex-direction: column;
+            }
+            
+            .rooted-content img, .rooted-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="#services">Services</a>
+        <a href="#rooted">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Moorlands</h1>
+            <h2>—where brands are strong by nature</h2>
+        </div>
+    </header>
+
+    <main>
+        <section class="headline-section">
+            <div class="container">
+                <div class="subline">
+                    <p>Your brand’s strength comes from the story that anchors it. I’m Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button primary">Let’s Get Started</a>
+                    <a href="#rooted" class="cta-button secondary">The Method to the Moorlands</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2>Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Discovery</h3>
+                        <p>Clearing the fog</p>
+                        <ul>
+                            <li>Discovery Sessions</li>
+                            <li>Interviews</li>
+                            <li>Audits & Analyses</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Strategy</h3>
+                        <p>Laying the roots</p>
+                        <ul>
+                            <li>Verbal Identity, inclusive of:</li>
+                            <li>Brand Positioning</li>
+                            <li>Brand Architecture</li>
+                            <li>Audience Personas</li>
+                            <li>Voice & Tone</li>
+                            <li>Messaging Pillars</li>
+                            <li>Tagline / Elevator Pitch</li>
+                            <li>Brand Manifesto / Origin Story</li>
+                            <li>Guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Expression</h3>
+                        <p>Letting it grow</p>
+                        <ul>
+                            <li>Naming</li>
+                            <li>Campaigns</li>
+                            <li>Copywriting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rooted-section" id="rooted">
+            <div class="container">
+                <div class="rooted-content">
+                    <div class="rooted-text">
+                        <h2>Rooted stories with wild impact</h2>
+                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired enduring, culture-shaping stories. Authors like the Brontë Sisters often lifted their novels’ characters out of the limitations of everyday life and placed them in this unique landscape to discover who they are and their unique purposes.</p>
+                        <p>My work is guided by the same principles of freedom, authenticity, life, and hope that the moorlands embody. Away from stale conventions and fleeting trends, I uncover what makes your story truly unique and cultivate it into a brand that inspires.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2>Ready to grow your brand?</h2>
+                <p>Let’s wander in the Moorlands.</p>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <small>Fields marked with a * are required</small>
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="services-dropdown">Service(s) Interested In (select all that apply)</label>
+                            <select id="services-dropdown" name="services">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="discovery">Discovery</option>
+                                <option value="strategy">Strategy</option>
+                                <option value="expression">Expression</option>
+                                <option value="all">All Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="help">How Can I Help?*</label>
+                            <textarea id="help" name="help" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Fill out the contact form below</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>&copy; ashleymazzarella.com</span>
+            <span>|</span>
+            <a href="#services">Services</a>
+            <span>|</span>
+            <span>#WriteMoorStories</span>
+        </div>
+    </footer>
+
+</body>
+</html>
