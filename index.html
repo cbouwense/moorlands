@@ -11,14 +11,19 @@
         :root {
             --light-purple: #f3e9f5;
             --dark-purple: #4c2c54;
+            --charcoal-black: #2c2c2c;
             --text-color: #333;
+            --sage-green: #A8B5A2;
+            --darker-sage-green: #838d7f;
+            --pale-gold: #EADCA6;
             --heading-font: 'Playfair Display', serif;
             --body-font: 'Raleway', sans-serif;
         }
 
         body {
             font-family: var(--body-font);
-            color: var(--text-color);
+            /* color: var(--text-color); */
+            color: var(--charcoal-black);
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -110,11 +115,32 @@
         }
 
         .headline-section .subline {
-            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
             margin: 0 auto;
             font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 40px;
+            padding: 0 5%
+        }
+
+        .subline-big {
+            text-align: left;
+            color: var(--sage-green);
+            /* color: var(--darker-sage-green); */
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 40px;
+            max-width: 40vw;
+        }
+
+        .subline-small {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 40vw;
         }
 
         .cta-buttons {
@@ -369,21 +395,23 @@
     <header class="hero" id="hero">
         <div class="hero-content">
             <h1>Welcome to the Moorlands</h1>
-            <h2>—where brands are strong by nature</h2>
+            <h2>where brands are strong by nature</h2>
         </div>
     </header>
 
     <main>
         <section class="headline-section">
-            <div class="container">
+            <!-- <div class="container"> -->
+                <!-- @TODO: responsivity -->
                 <div class="subline">
-                    <p>Your brand’s strength comes from the story that anchors it. I’m Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</p>
+                    <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT.</strong></div>
+                    <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
                 </div>
                 <div class="cta-buttons">
-                    <a href="#contact" class="cta-button primary">Let’s Get Started</a>
+                    <a href="#contact" class="cta-button primary">Let's Get Started</a>
                     <a href="#rooted" class="cta-button secondary">The Method to the Moorlands</a>
                 </div>
-            </div>
+            <!-- </div> -->
         </section>
         
         <section class="services-section" id="services">
@@ -432,8 +460,8 @@
                 <div class="rooted-content">
                     <div class="rooted-text">
                         <h2>Rooted stories with wild impact</h2>
-                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired enduring, culture-shaping stories. Authors like the Brontë Sisters often lifted their novels’ characters out of the limitations of everyday life and placed them in this unique landscape to discover who they are and their unique purposes.</p>
-                        <p>My work is guided by the same principles of freedom, authenticity, life, and hope that the moorlands embody. Away from stale conventions and fleeting trends, I uncover what makes your story truly unique and cultivate it into a brand that inspires.</p>
+                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired enduring, culture-shaping stories. Authors like the Brontë Sisters often lifted their novels' characters out of the limitations of everyday life and placed them in this unique landscape to help the protagonists discover who they are and their unique purposes.</p>
+                        <p>My work is guided by the same principles of freedom, authenticity, life, and hope that the moorlands embody. Away from clichéd conventions and tawdry trends, I uncover what makes your story truly unique and cultivate it into a brand that inspires.</p>
                     </div>
                 </div>
             </div>
@@ -442,7 +470,7 @@
         <section class="contact-section" id="contact">
             <div class="container">
                 <h2>Ready to grow your brand?</h2>
-                <p>Let’s wander in the Moorlands.</p>
+                <p>Let's wander in the Moorlands</p>
                 <div class="contact-form">
                     <form action="#" method="post">
                         <small>Fields marked with a * are required</small>
@@ -468,7 +496,7 @@
                             <label for="help">How Can I Help?*</label>
                             <textarea id="help" name="help" required></textarea>
                         </div>
-                        <button type="submit" class="submit-button">Fill out the contact form below</button>
+                        <button type="submit" class="submit-button">Submit</button>
                     </form>
                 </div>
             </div>
