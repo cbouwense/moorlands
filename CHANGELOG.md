@@ -7,4 +7,6 @@
 - edited second paragraph in "Rooted stories with wild impact" section to read "clichéd conventions and tawdry trends".
 - removed period from "Let's wander in the Moorlands".
 - removed m-dash in hero image text.
-- broke subline into two sections, the left one being big and sage green and the right one being normal size and color. 
+- broke subline into two sections, the left one being big and sage green and the right one being normal size and color.
+- added desktop nav bar
+- added first splash art
