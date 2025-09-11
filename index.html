@@ -38,8 +38,12 @@
 
         /* Navigation */
         nav {
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 100vw;
-            height: 5vh;
+            height: 10vh;
+            z-index: 500;
         }
 
         .nav-container {
@@ -55,16 +59,18 @@
             height: 100%;
             color: var(--charcoal-black);
             text-decoration: none;
+            font-family: var(--heading-font);
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 1.25rem;
             display: flex;
             align-items: center;
         }
         
         /* Hero Section */
         .hero {
-            background-image: url("splash.png");
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash2.png");
+            background-color: white;
             background-size: cover;
             background-position: center;
             min-height: 80vh;
@@ -298,11 +304,10 @@
         
         .form-group label {
             display: block;
-            margin-bottom: 5px;
             font-weight: 500;
         }
         
-        .form-group input, .form-group textarea, .form-group select {
+        .form-group input[type=text], input[type=email], .form-group textarea, .form-group select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -319,6 +324,13 @@
         .form-group small {
             font-size: 0.8rem;
             color: #777;
+        }
+
+        .form-checkbox {
+            display: flex;
+            gap: 1rem;
+            justify-content: start;
+            align-items: center;
         }
 
         .submit-button {
@@ -480,31 +492,36 @@
                 <h2>Ready to grow your brand?</h2>
                 <p>Let's wander in the Moorlands</p>
                 <div class="contact-form">
-                    <form action="#" method="post">
+                    <form action="https://formspree.io/f/xzzawzpn" method="post">
                         <small>Fields marked with a * are required</small>
                         <div class="form-group">
                             <label for="name">Name*</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type ="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address*</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="services-dropdown">Service(s) Interested In (select all that apply)</label>
-                            <select id="services-dropdown" name="services">
-                                <option value="" disabled selected>Select an option</option>
-                                <option value="discovery">Discovery</option>
-                                <option value="strategy">Strategy</option>
-                                <option value="expression">Expression</option>
-                                <option value="all">All Services</option>
-                            </select>
+                            <label>Services of interest (select all that apply)</label>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="discovery" name="services" value="discovery">
+                                <label for="discovery">Discovery</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="strategy" name="services" value="strategy">
+                                <label for="strategy">Strategy</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="expression" name="services" value="expression">
+                                <label for="expression">Expression</label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="help">How Can I Help?*</label>
                             <textarea id="help" name="help" required></textarea>
                         </div>
-                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="submit" class="submit-button">Send</button>
                     </form>
                 </div>
             </div>
