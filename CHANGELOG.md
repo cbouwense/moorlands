@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 2025-09-23
+
+- take yellowish hue and use that as background rooted stories
+- discovery, strategy, expression, rooted stories sans serif
+- get rid of moon, shift image up
+- got rid of form input and just put email
+- changed colors to what Ashley wanted... it's bad
+- lowered font size of large subline text
+- "narrative placemaking" in Expression
+- rooted stories header on left, small text on right
+- updated copy of "Rooted Stories with Wild Impact" to 2025-09-12 copy
+
 ## 2025-09-09
 
 - bolded "Your brand's strength comes from the story that anchors it".

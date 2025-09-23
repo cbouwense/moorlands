@@ -9,12 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --light-purple: #f3e9f5;
-            --dark-purple: #4c2c54;
-            --charcoal-black: #2c2c2c;
+            --primary-lavender: #DFC5FE;
+            --dark-purple: #4C2C54;
+            --charcoal-black: #2C2C2C;
             --sage-green: #A8B5A2;
-            --darker-sage-green: #838d7f;
-            --pale-gold: #EADCA6;
+            --secondary-green: #2E4D2F;
+            --pale-gold: #e8e0c0;
+            --tertiary-yellow: #D4A01A;
+            --suggested-yellow: rgba(240, 238, 173, 0.5);
             --heading-font: 'Playfair Display', serif;
             --body-font: 'Raleway', sans-serif;
         }
@@ -27,7 +29,7 @@
             padding: 0;
             line-height: 1.6;
             background-color: #fff;
-            width: 100vw;
+            width: 100%;
         }
 
         .container {
@@ -41,7 +43,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 100vw;
+            width: 100%;
             height: 10vh;
             z-index: 500;
         }
@@ -66,13 +68,23 @@
             display: flex;
             align-items: center;
         }
+
+        a:link {
+            color: var(--primary-lavender);
+        }
+
+        a:visited {
+            color: var(--primary-lavender);
+        }
         
-        /* Hero Section */
+        /**********************************************************************/
+        /* Hero Section                                                       */
+        /**********************************************************************/
         .hero {
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash2.png");
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash3.png");
             background-color: white;
             background-size: cover;
-            background-position: center;
+            background-position: left top, center -200px;
             min-height: 80vh;
             display: flex;
             align-items: center;
@@ -103,6 +115,7 @@
             font-family: var(--heading-font);
             font-size: 4rem;
             margin-bottom: 0;
+            margin-top: 0;
         }
         
         .hero h2 {
@@ -113,47 +126,115 @@
             margin-top: 5px;
         }
 
-        /* Headline Section */
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash3.png");
+                background-color: white;
+                background-size: cover;
+                background-position: center;
+                min-height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: var(--charcoal-black);
+                position: relative;
+            }
+            
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0   );
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-family: var(--heading-font);
+                font-size: 4rem;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+            
+            .hero h2 {
+                font-family: var(--heading-font);
+                font-size: 1.5rem;
+                font-style: italic;
+                font-weight: 400;
+                margin-top: 5px;
+            }
+        }
+
+        /**********************************************************************/
+        /* Headline Section                                                   */
+        /**********************************************************************/
         .headline-section {
             padding: 80px 0;
             text-align: center;
         }
 
-        .headline-section h2 {
-            font-family: var(--heading-font);
-            font-size: 2.5rem;
-            color: var(--dark-purple);
-            margin-bottom: 20px;
-        }
-
         .headline-section .subline {
             display: flex;
-            justify-content: space-between;
-            max-width: 100%;
+            gap: 2rem;
+            width: 75%;
+            font-size: 1.1rem;
+            line-height: 1.8;
             margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
             margin-bottom: 40px;
-            padding: 0 5%
         }
 
-        .subline-big {
-            text-align: left;
-            color: var(--sage-green);
-            /* color: var(--darker-sage-green); */
-            font-size: 5rem;
-            line-height: 1;
-            margin-bottom: 40px;
-            max-width: 40vw;
+        /* Mobile */
+        @media (max-width: 768px) {
+            .headline-section {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .headline-section .subline {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 95%;
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin: 0 auto;
+                margin-bottom: 40px;
+            }
+
+            .headline-section .subline-big {
+                text-align: left;
+                color: var(--secondary-green);
+                /* color: var(--sage-green); */
+                font-size: 2.5rem;
+                line-height: 1;
+                margin-bottom: 40px;
+                width: 100%;
+                min-width: 100px;
+            }
+
+            .headline-section .subline-small {
+                text-align: left;
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin-bottom: 40px;
+                width: 100%;
+                min-width: 100px;
+            }
         }
 
-        .subline-small {
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            max-width: 40vw;
-        }
+        /**********************************************************************/
+        /* CTA Buttons                                                        */
+        /**********************************************************************/
 
         .cta-buttons {
             display: flex;
@@ -163,7 +244,7 @@
 
         .cta-button {
             padding: 15px 30px;
-            border: 2px solid var(--dark-purple);
+            border: 2px solid var(--primary-lavender);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 700;
@@ -171,22 +252,22 @@
         }
 
         .cta-button.primary {
-            background-color: var(--dark-purple);
+            background-color: var(--primary-lavender);
             color: #fff;
         }
 
         .cta-button.primary:hover {
             background-color: #fff;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
         }
 
         .cta-button.secondary {
             background-color: #fff;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
         }
 
         .cta-button.secondary:hover {
-            background-color: var(--dark-purple);
+            background-color: var(--primary-lavender);
             color: #fff;
         }
         
@@ -199,7 +280,7 @@
             font-family: var(--heading-font);
             text-align: center;
             font-size: 2.5rem;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
             margin-bottom: 40px;
         }
 
@@ -222,9 +303,9 @@
         }
 
         .service-card h3 {
-            font-family: var(--heading-font);
+            font-family: var(--body-font);
             font-size: 1.5rem;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
             margin-bottom: 10px;
         }
 
@@ -247,8 +328,41 @@
 
         /* Rooted Section */
         .rooted-section {
-            background-color: var(--light-purple);
+            background-color: var(--suggested-yellow);
+            /* background-color: var(--tertiary-yellow); */
+            /* background-color: var(--light-purple); */
             padding: 80px 0;
+        }
+
+        .rooted-section .subline {
+            display: flex;
+            gap: 2rem;
+            width: 75%;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* margin: 0 auto; */
+            margin-bottom: 40px;
+        }
+
+        .rooted-section .subline-big {
+            font-family: var(--heading-font);
+            text-align: left;
+            color: var(--primary-lavender);
+            margin-top: 0;
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 40px;
+            width: 100%;
+            min-width: 100px;
+        }
+
+        .rooted-section .subline-small {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            width: 100%;
+            min-width: 100px;
         }
 
         .rooted-content {
@@ -271,7 +385,7 @@
         .rooted-text h2 {
             font-family: var(--heading-font);
             font-size: 2.5rem;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
             margin-top: 0;
         }
 
@@ -284,7 +398,7 @@
         .contact-section h2 {
             font-family: var(--heading-font);
             font-size: 2.5rem;
-            color: var(--dark-purple);
+            color: var(--primary-lavender);
         }
         
         .contact-section p {
@@ -337,7 +451,7 @@
             display: block;
             width: 100%;
             padding: 15px;
-            background-color: var(--dark-purple);
+            background-color: var(--primary-lavender);
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -354,7 +468,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--dark-purple);
+            background-color: var(--primary-lavender);
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -421,17 +535,15 @@
 
     <main>
         <section class="headline-section">
-            <!-- <div class="container"> -->
-                <!-- @TODO: responsivity -->
-                <div class="subline">
-                    <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT.</strong></div>
-                    <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="#contact" class="cta-button primary">Let's Get Started</a>
-                    <a href="#rooted" class="cta-button secondary">The Method to the Moorlands</a>
-                </div>
-            <!-- </div> -->
+            <!-- @TODO: responsivity -->
+            <div class="subline">
+                <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT.</strong></div>
+                <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button primary">Let's Get Started</a>
+                <a href="#rooted" class="cta-button secondary">The Method to the Moorlands</a>
+            </div>
         </section>
         
         <section class="services-section" id="services">
@@ -469,6 +581,7 @@
                             <li>Naming</li>
                             <li>Campaigns</li>
                             <li>Copywriting</li>
+                            <li>Narrative Placemaking</li>
                         </ul>
                     </div>
                 </div>
@@ -476,54 +589,22 @@
         </section>
 
         <section class="rooted-section" id="rooted">
-            <div class="container">
-                <div class="rooted-content">
-                    <div class="rooted-text">
-                        <h2>Rooted stories with wild impact</h2>
-                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired enduring, culture-shaping stories. Authors like the Brontë Sisters often lifted their novels' characters out of the limitations of everyday life and placed them in this unique landscape to help the protagonists discover who they are and their unique purposes.</p>
-                        <p>My work is guided by the same principles of freedom, authenticity, life, and hope that the moorlands embody. Away from clichéd conventions and tawdry trends, I uncover what makes your story truly unique and cultivate it into a brand that inspires.</p>
+            <!-- <div class="container"> -->
+                <div class="subline">
+                    <div class="subline-big"><strong>Rooted stories with Wild Impact</strong></div>
+                    <div class="subline-small">
+                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
+                        <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </section>
 
         <section class="contact-section" id="contact">
             <div class="container">
                 <h2>Ready to grow your brand?</h2>
                 <p>Let's wander in the Moorlands</p>
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/xzzawzpn" method="post">
-                        <small>Fields marked with a * are required</small>
-                        <div class="form-group">
-                            <label for="name">Name*</label>
-                            <input type ="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address*</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Services of interest (select all that apply)</label>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="discovery" name="services" value="discovery">
-                                <label for="discovery">Discovery</label>
-                            </div>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="strategy" name="services" value="strategy">
-                                <label for="strategy">Strategy</label>
-                            </div>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="expression" name="services" value="expression">
-                                <label for="expression">Expression</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="help">How Can I Help?*</label>
-                            <textarea id="help" name="help" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send</button>
-                    </form>
-                </div>
+                <p>Email me at <a href="mailto:mazzarellaashley@gmail.com">mazzarellaashley@gmail.com</a></p>
             </div>
         </section>
     </main>

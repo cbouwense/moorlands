@@ -1,0 +1,1 @@
+- stack text on mobile
