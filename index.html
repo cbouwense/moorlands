@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-lavender: #DFC5FE;
             --plum: #65364a; /* nav */
             --dark-purple: #4C2C54;
             --charcoal-black: #2C2C2C;
@@ -17,14 +16,13 @@
             --secondary-green: #2E4D2F;
             --pale-gold: #e8e0c0;
             --tertiary-yellow: #D4A01A;
-            --suggested-yellow: rgba(240, 238, 173, 0.5);
+            --suggested-yellow: rgba(247, 240, 230);
             --heading-font: 'Playfair Display', serif;
             --body-font: 'Raleway', sans-serif;
         }
 
         body {
             font-family: var(--body-font);
-            /* color: var(--text-color); */
             color: var(--charcoal-black);
             margin: 0;
             padding: 0;
@@ -86,7 +84,7 @@
             background-color: white;
             background-size: cover;
             background-position: left top, center -100px;
-            min-height: 80vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,15 +132,15 @@
             );
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-family: var(--heading-font);
             font-size: 4rem;
             margin-bottom: 0;
             margin-top: 0;
         }
         
-        .hero h2 {
-            font-family: var(--heading-font);
+        .hero-content h2 {
+            font-family: var(--body-font);
             font-size: 1.5rem;
             font-style: italic;
             font-weight: 400;
@@ -200,21 +198,41 @@
         }
 
         /**********************************************************************/
+        /* Subline                                                            */
+        /**********************************************************************/
+        .subline {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .subline-big {
+            font-family: var(--heading-font);
+            text-align: left;
+            color: var(--plum);
+            margin-top: 0;
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 40px;
+            width: 25%
+        }
+
+        .subline-small {
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            width: 25%;
+        }
+
+        /**********************************************************************/
         /* Headline Section                                                   */
         /**********************************************************************/
         .headline-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .headline-section .subline {
-            display: flex;
-            gap: 2rem;
-            width: 75%;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin: 0 auto;
-            margin-bottom: 40px;
+            margin-top: 120px;
         }
 
         /* Mobile */
@@ -268,7 +286,7 @@
 
         .cta-button {
             padding: 15px 30px;
-            border: 2px solid var(--primary-lavender);
+            border: 2px solid var(--plum);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 700;
@@ -276,35 +294,35 @@
         }
 
         .cta-button.primary {
-            background-color: var(--primary-lavender);
+            background-color: var(--plum);
             color: #fff;
         }
 
         .cta-button.primary:hover {
             background-color: #fff;
-            color: var(--primary-lavender);
+            color: var(--plum);
         }
 
         .cta-button.secondary {
             background-color: #fff;
-            color: var(--primary-lavender);
+            color: var(--plum);
         }
 
         .cta-button.secondary:hover {
-            background-color: var(--primary-lavender);
+            background-color: var(--plum);
             color: #fff;
         }
         
         /* Services Section */
         .services-section {
-            padding: 80px 0;
+            margin: 80px 0;
         }
 
         .services-section h2 {
             font-family: var(--heading-font);
             text-align: center;
             font-size: 2.5rem;
-            color: var(--primary-lavender);
+            color: var(--plum);
             margin-bottom: 40px;
         }
 
@@ -329,7 +347,7 @@
         .service-card h3 {
             font-family: var(--body-font);
             font-size: 1.5rem;
-            color: var(--primary-lavender);
+            color: var(--plum);
             margin-bottom: 10px;
         }
 
@@ -353,40 +371,7 @@
         /* Rooted Section */
         .rooted-section {
             background-color: var(--suggested-yellow);
-            /* background-color: var(--tertiary-yellow); */
-            /* background-color: var(--light-purple); */
-            padding: 80px 0;
-        }
-
-        .rooted-section .subline {
-            display: flex;
-            gap: 2rem;
-            width: 75%;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            /* margin: 0 auto; */
-            margin-bottom: 40px;
-        }
-
-        .rooted-section .subline-big {
-            font-family: var(--heading-font);
-            text-align: left;
-            color: var(--primary-lavender);
-            margin-top: 0;
-            font-size: 4rem;
-            line-height: 1;
-            margin-bottom: 40px;
-            width: 100%;
-            min-width: 100px;
-        }
-
-        .rooted-section .subline-small {
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            width: 100%;
-            min-width: 100px;
+            padding-top: 80px;
         }
 
         .rooted-content {
@@ -409,7 +394,7 @@
         .rooted-text h2 {
             font-family: var(--heading-font);
             font-size: 2.5rem;
-            color: var(--primary-lavender);
+            color: var(--plum);
             margin-top: 0;
         }
 
@@ -422,7 +407,7 @@
         .contact-section h2 {
             font-family: var(--heading-font);
             font-size: 2.5rem;
-            color: var(--primary-lavender);
+            color: var(--plum);
         }
         
         .contact-section p {
@@ -475,7 +460,7 @@
             display: block;
             width: 100%;
             padding: 15px;
-            background-color: var(--primary-lavender);
+            background-color: var(--plum);
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -492,7 +477,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--primary-lavender);
+            background-color: var(--plum);
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -564,10 +549,10 @@
                 <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT</strong></div>
                 <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
             </div>
-            <div class="cta-buttons">
+            <!-- <div class="cta-buttons">
                 <a href="#contact" class="cta-button primary">Let's Get Started</a>
                 <a href="#rooted" class="cta-button secondary">The Method to the Moorlands</a>
-            </div>
+            </div> -->
         </section>
         
         <section class="services-section" id="services">
@@ -613,15 +598,13 @@
         </section>
 
         <section class="rooted-section" id="rooted">
-            <!-- <div class="container"> -->
-                <div class="subline">
-                    <div class="subline-big"><strong>Rooted stories with Wild Impact</strong></div>
-                    <div class="subline-small">
-                        <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
-                        <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
-                    </div>
+            <div class="subline">
+                <div class="subline-big"><strong>Rooted Stories with Wild Impact</strong></div>
+                <div class="subline-small">
+                    <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
+                    <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
                 </div>
-            <!-- </div> -->
+            </div>
         </section>
 
         <section class="contact-section" id="contact">

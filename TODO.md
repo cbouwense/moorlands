@@ -1,8 +1,1 @@
 - stack text on mobile
-- plum for nav
-- "where brands are strong by nature" to use "your brand's" font
-- justify apart "your brand" and right text
-- color to plum for services section stuff
-- Rooted Stories capitalized
-- same alignment as subline
-- lighter nature-y, green, sage, keep it light for rooted stories

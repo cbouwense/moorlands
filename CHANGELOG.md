@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2025-10-02
+
+- added in new splash art and contrast for title
+- changed font of subtitle
+- justify apart "your brand" and right text
+- color to plum for services section stuff
+- "Rooted stories" -> "Rooted Stories" (capitalized)
+
 ## 2025-09-25
 
 - removed footer
