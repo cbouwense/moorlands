@@ -130,13 +130,12 @@
             content: '';
             position: absolute;
             top: -50px; 
-            left: -50px; 
-            right: -50px; 
+            left: 0px; 
+            right: 0px; 
             bottom: -10px;
             pointer-events: none; /* Allows clicks to pass through to the main div */
             z-index: -1;
 
-            /* --- The Magic: Radial Gradient --- */
             background: radial-gradient(
                 rgba(247, 240, 230, 1) 0%,
                 rgba(247, 240, 230, 0.85) 60%,
@@ -177,14 +176,17 @@
             }
             
             .hero::before {
-                content: '';
-                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0   );
                 z-index: 1;
+
+                background: radial-gradient(
+                    rgba(247, 240, 230, 0.75) 0%,
+                    rgba(247, 240, 230, 0.5) 45%,
+                    transparent 75%
+                );
             }
             
             .hero-content {
@@ -193,19 +195,19 @@
                 padding: 20px;
             }
 
-            .hero h1 {
+            .hero-content h1 {
                 font-family: var(--heading-font);
                 font-size: 3rem;
                 margin-bottom: 0;
                 margin-top: 0;
             }
             
-            .hero h2 {
-                font-family: var(--heading-font);
-                font-size: 1.5rem;
+            .hero-content h2 {
+                font-size: 1.25rem;
                 font-style: italic;
                 font-weight: 400;
                 margin-top: 5px;
+                max-width: 75%;
             }
         }
 
@@ -412,12 +414,12 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- <header class="hero" id="hero">
+    <header class="hero" id="hero">
         <div class="hero-content">
             <h1>Welcome to the Moorlands</h1>
             <h2>where brands are strong by nature</h2>
         </div>
-    </header> -->
+    </header>
 
     <main>
         <section class="headline-section">
