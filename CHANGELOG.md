@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2025-09-25
+
+- removed footer
+
 ## 2025-09-23
 
 - take yellowish hue and use that as background rooted stories

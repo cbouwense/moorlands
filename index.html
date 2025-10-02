@@ -65,17 +65,17 @@
             font-family: var(--heading-font);
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 1.25rem;
+            font-size: 2rem;
             display: flex;
             align-items: center;
         }
 
         a:link {
-            color: var(--primary-lavender);
+            color: var(--charcoal-black);
         }
 
         a:visited {
-            color: var(--primary-lavender);
+            color: var(--charcoal-black);
         }
         
         /**********************************************************************/
@@ -85,7 +85,7 @@
             background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash4.png");
             background-color: white;
             background-size: cover;
-            background-position: left top, center -200px;
+            background-position: left top, center -100px;
             min-height: 80vh;
             display: flex;
             align-items: center;
@@ -107,9 +107,31 @@
         }
         
         .hero-content {
+            /* background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white box */
+            /* padding: 5px 10px; Add some space around the text */
+            color: var(--charcoal-black);
             position: relative;
-            z-index: 2;
+            z-index: 4;
             padding: 20px;
+            overflow: visible;
+        }
+
+        .hero-content::before {
+            content: '';
+            position: absolute;
+            top: -50px; 
+            left: -50px; 
+            right: -50px; 
+            bottom: -10px;
+            pointer-events: none; /* Allows clicks to pass through to the main div */
+            z-index: -1;
+
+            /* --- The Magic: Radial Gradient --- */
+            background: radial-gradient(
+                rgba(247, 240, 230, 1) 0%,
+                rgba(247, 240, 230, 0.85) 60%,
+                transparent 75%
+            );
         }
 
         .hero h1 {
@@ -539,7 +561,7 @@
         <section class="headline-section">
             <!-- @TODO: responsivity -->
             <div class="subline">
-                <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT.</strong></div>
+                <div class="subline-big"><strong>YOUR BRAND'S STRENGTH COMES FROM THE STORY THAT ANCHORS IT</strong></div>
                 <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
             </div>
             <div class="cta-buttons">
@@ -610,16 +632,5 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <span>&copy; ashleymazzarella.com</span>
-            <span>|</span>
-            <a href="#services">Services</a>
-            <span>|</span>
-            <span>#WriteMoorStories</span>
-        </div>
-    </footer>
-
 </body>
 </html>
