@@ -1,1 +1,5 @@
-- stack text on mobile
+- poke up the fold
+- lighten the splash art
+- where brands are strong by nature no italics
+- grow the width of the your brand's strength
+- 
