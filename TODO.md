@@ -1,8 +1,1 @@
-- poke up the fold
-- lighten the splash art
-- where brands are strong by nature no italics
-- grow the width of the your brand's strength
-- welcome to the moorlands bigger
-- nav links smaller
-- dicsovery stragtegy etc to be sage
-- your brand's strength proper case
+

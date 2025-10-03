@@ -9,12 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --plum: #65364a; /* nav */
-            --dark-purple: #4C2C54;
+            --plum: #65364a;
             --charcoal-black: #2C2C2C;
-            --sage-green: #A8B5A2;
-            --secondary-green: #2E4D2F;
-            --pale-gold: #e8e0c0;
+            --sage-green: #6D765b;
             --tertiary-yellow: #D4A01A;
             --suggested-yellow: rgba(247, 240, 230);
             --heading-font: 'Playfair Display', serif;
@@ -60,7 +57,7 @@
             font-family: var(--heading-font);
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 2rem;
+            font-size: 1.75rem;
             display: flex;
             align-items: center;
         }
@@ -89,10 +86,10 @@
         /* Hero Section                                                       */
         /**********************************************************************/
         .hero {
-            height: 100vh;
+            height: 75vh;
             
             background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash4.png");
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
             background-size: cover;
             background-position: left top, center -100px;
 
@@ -100,11 +97,10 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--charcoal-black);
 
             position: relative;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -112,20 +108,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0   );
-            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.5);
         }
         
         .hero-content {
-            /* background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white box */
-            /* padding: 5px 10px; Add some space around the text */
-            color: var(--charcoal-black);
+            color: var(--sage-green);
             position: relative;
             z-index: 4;
             padding: 20px;
             overflow: visible;
         }
 
+        /* Transparent blob thing for contrast */
         .hero-content::before {
             content: '';
             position: absolute;
@@ -145,15 +139,14 @@
 
         .hero-content h1 {
             font-family: var(--heading-font);
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 0;
             margin-top: 0;
         }
         
         .hero-content h2 {
             font-family: var(--body-font);
-            font-size: 1.5rem;
-            font-style: italic;
+            font-size: 1.75rem;
             font-weight: 400;
             margin-top: 5px;
         }
@@ -162,23 +155,19 @@
         @media (max-width: 768px) {
             .hero {
                 background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash4.png");
-                background-color: white;
-                /* background-size: cover; */
                 background-repeat: no-repeat;
                 background-position: center;
-                min-height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
             }
             
-            .hero::before {
+            .hero-content::before {
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: 1;
 
                 background: radial-gradient(
                     rgba(247, 240, 230, 0.75) 0%,
@@ -191,6 +180,10 @@
                 position: relative;
                 z-index: 2;
                 padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .hero-content h1 {
@@ -229,7 +222,7 @@
             font-size: 4rem;
             line-height: 1;
             margin-bottom: 40px;
-            width: 25%
+            width: 50%
         }
 
         .subline-small {
@@ -272,33 +265,6 @@
             .headline-section {
                 padding: 10px 0;
                 text-align: center;
-            }
-
-            .subline {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                width: 95%;
-                font-size: 1.1rem;
-                line-height: 1.8;
-                margin: 0 auto;
-                margin-bottom: 40px;
-            }
-
-            .subline-big {
-                text-align: left;
-                font-size: 2.5rem;
-                line-height: 1;
-                margin-bottom: 40px;
-                width: 100%;
-            }
-
-            .subline-small {
-                text-align: left;
-                font-size: 1.1rem;
-                line-height: 1.8;
-                margin-bottom: 40px;
-                width: 100%;
             }
         }
         
@@ -372,7 +338,7 @@
             }
 
             .service-card h3 {
-                color: var(--plum);
+                color: var(--sage-green);
                 margin: 0;
             }
         }
@@ -422,7 +388,7 @@
     <main>
         <section class="headline-section">
             <div class="subline">
-                <div class="subline-big"><strong>Your Brand's Strength Comes form the Story that Anchors it</strong></div>
+                <div class="subline-big"><strong>Your Brand's Strength Comes from the Story that Anchors it</strong></div>
                 <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
             </div>
         </section>
@@ -486,6 +452,6 @@
                 <p>Email me at <a href="mailto:mazzarellaashley@gmail.com">mazzarellaashley@gmail.com</a></p>
             </div>
         </section>
-    </main> -->
+    </main>
 </body>
 </html>

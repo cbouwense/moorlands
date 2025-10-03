@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 2025-10-03
+
+- poke up the fold
+- lighten the splash art
+- make title green
+- where brands are strong by nature no italics
+- welcome to the moorlands bigger
+- nav links smaller
+- your brand's strength proper case
+- discovery, stragtegy etc. to be sage
+- where brands are strong by nature centered on mobile
+- grow the width of the your brand's strength
+
 ## 2025-10-02
 
 - added in new splash art and contrast for title
