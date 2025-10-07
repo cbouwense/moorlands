@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2025-10-07
+
+- fix overflow on mobile
+- Proper case nav
+- lighten contrast blur
+
 ## 2025-10-03
 
 - poke up the fold

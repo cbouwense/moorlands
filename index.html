@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
         :root {
             --plum: #65364a;
             --charcoal-black: #2C2C2C;
@@ -56,7 +64,6 @@
             text-decoration: none;
             font-family: var(--heading-font);
             font-weight: 500;
-            text-transform: uppercase;
             font-size: 1.75rem;
             display: flex;
             align-items: center;
@@ -131,9 +138,9 @@
             z-index: -1;
 
             background: radial-gradient(
-                rgba(247, 240, 230, 1) 0%,
-                rgba(247, 240, 230, 0.85) 60%,
-                transparent 75%
+                rgba(247, 240, 230, 0.75) 0%,
+                rgba(247, 240, 230, 0.65) 60%,
+                transparent 85%
             );
         }
 
@@ -238,7 +245,7 @@
                 flex-direction: column;
                 gap: 1rem;
                 width: 100%;
-                margin: 0 20px;
+                padding: 0 20px;
                 line-height: 1.8;
                 margin-bottom: 40px;
             }

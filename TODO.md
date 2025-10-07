@@ -1,1 +1,3 @@
-
+- color changes
+- services headers sage green
+- put "with" on under "rooted stores" and above "wild impact"
