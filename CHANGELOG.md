@@ -5,6 +5,9 @@
 - fix overflow on mobile
 - Proper case nav
 - lighten contrast blur
+- services headers sage green
+- rachel's color suggestions
+- put "with" on under "rooted stores" and above "wild impact"
 
 ## 2025-10-03
 

@@ -17,11 +17,11 @@
         }
 
         :root {
-            --plum: #65364a;
+            --bark: #3B281B;
             --charcoal-black: #2C2C2C;
-            --sage-green: #6D765b;
-            --tertiary-yellow: #D4A01A;
-            --suggested-yellow: rgba(247, 240, 230);
+            --earth-green: #3F3F2C;
+            --old-lace: #F7F1E1;
+            --bone: #E3D8C1;
             --heading-font: 'Playfair Display', serif;
             --body-font: 'Raleway', sans-serif;
         }
@@ -32,7 +32,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #fff;
+            background-color: var(--bone);
             width: 100%;
         }
 
@@ -95,8 +95,8 @@
         .hero {
             height: 75vh;
             
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash4.png");
-            background-color: rgba(255, 255, 255, 0.5);
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, var(--bone) 100%), url("splash4.png");
+            /* background-color: rgba(255, 255, 255, 0.5); */
             background-size: cover;
             background-position: left top, center -100px;
 
@@ -115,11 +115,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.5);
+            /* background-color: rgba(255, 255, 255, 0.5); */
         }
         
         .hero-content {
-            color: var(--sage-green);
+            color: var(--earth-green);
             position: relative;
             z-index: 4;
             padding: 20px;
@@ -138,8 +138,8 @@
             z-index: -1;
 
             background: radial-gradient(
-                rgba(247, 240, 230, 0.75) 0%,
-                rgba(247, 240, 230, 0.65) 60%,
+                rgba(247, 240, 230, 0.85) 0%,
+                rgba(247, 240, 230, 0.75) 60%,
                 transparent 85%
             );
         }
@@ -161,26 +161,13 @@
         /* Mobile */
         @media (max-width: 768px) {
             .hero {
-                background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, white 100%), url("splash4.png");
+                background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, var(--bone) 100%), url("splash4.png");
                 background-repeat: no-repeat;
                 background-position: center;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-            }
-            
-            .hero-content::before {
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-
-                background: radial-gradient(
-                    rgba(247, 240, 230, 0.75) 0%,
-                    rgba(247, 240, 230, 0.5) 45%,
-                    transparent 75%
-                );
             }
             
             .hero-content {
@@ -224,7 +211,7 @@
         .subline-big {
             font-family: var(--heading-font);
             text-align: left;
-            color: var(--plum);
+            color: var(--bark);
             margin-top: 0;
             font-size: 4rem;
             line-height: 1;
@@ -286,7 +273,7 @@
             font-family: var(--heading-font);
             text-align: center;
             font-size: 2.5rem;
-            color: var(--plum);
+            color: var(--bark);
             margin-bottom: 40px;
         }
 
@@ -311,7 +298,7 @@
         .service-card h3 {
             font-family: var(--body-font);
             font-size: 1.5rem;
-            color: var(--plum);
+            color: var(--earth-green);
             margin-bottom: 10px;
         }
 
@@ -345,7 +332,6 @@
             }
 
             .service-card h3 {
-                color: var(--sage-green);
                 margin: 0;
             }
         }
@@ -354,8 +340,13 @@
         /* Rooted Section                                                     */
         /**********************************************************************/
         .rooted-section {
-            background-color: var(--suggested-yellow);
+            background-color: var(--old-lace);
             padding-top: 80px;
+        }
+
+        .rooted-stacked {
+            display: flex;
+            flex-direction: column;
         }
 
         /**********************************************************************/
@@ -369,7 +360,7 @@
         .contact-section h2 {
             font-family: var(--heading-font);
             font-size: 2.5rem;
-            color: var(--plum);
+            color: var(--bark);
         }
         
         .contact-section p {
@@ -444,7 +435,11 @@
 
         <section class="rooted-section" id="rooted">
             <div class="subline">
-                <div class="subline-big"><strong>Rooted Stories with Wild Impact</strong></div>
+                <div class="subline-big rooted-stacked">
+                    <strong>Rooted Stories</strong>
+                    <strong>with</strong>
+                    <strong>Wild Impact</strong>
+                </div>
                 <div class="subline-small">
                     <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
                     <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
