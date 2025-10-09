@@ -7,6 +7,7 @@
 - header fade thing should take up entire picture
 - make the colors off-white, then darker cream, then off-white
 - more of a fade into the body from splash
+- add picture to rooted stories section
 
 ## 2025-10-07
 
