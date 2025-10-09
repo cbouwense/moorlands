@@ -1,2 +1,2 @@
-
-
+- more of a fade into the body from splash
+- add picture to rooted stories section

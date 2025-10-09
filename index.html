@@ -32,7 +32,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: var(--bone);
+            background-color: var(--old-lace);
             width: 100%;
         }
 
@@ -95,8 +95,7 @@
         .hero {
             height: 75vh;
             
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 70%, var(--bone) 100%), url("splash4.png");
-            /* background-color: rgba(255, 255, 255, 0.5); */
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--old-lace) 95%), url("splash4.png");
             background-size: cover;
             background-position: left top, center -100px;
 
@@ -115,12 +114,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* background-color: rgba(255, 255, 255, 0.5); */
         }
         
         .hero-content {
             color: var(--earth-green);
-            position: relative;
             z-index: 4;
             padding: 20px;
             overflow: visible;
@@ -130,6 +127,8 @@
         .hero-content::before {
             content: '';
             position: absolute;
+            width: 100%;
+            height: 100%;
             top: -50px; 
             left: 0px; 
             right: 0px; 
@@ -200,6 +199,7 @@
         /* Subline                                                            */
         /**********************************************************************/
         .subline {
+            background-color: var(--old-lace);
             display: flex;
             width: 100%;
             justify-content: space-evenly;
@@ -251,7 +251,9 @@
         /* Headline Section                                                   */
         /**********************************************************************/
         .headline-section {
-            margin-top: 120px;
+            padding-top: 120px;
+            background-clip: content-box;
+            background-color: var(--old-lace);
         }
 
         /* Mobile */
@@ -284,7 +286,7 @@
         }
 
         .service-card {
-            border: 1px solid #ddd;
+            border: 1px solid var(--earth-green);
             padding: 30px;
             text-align: center;
             border-radius: 8px;
@@ -340,8 +342,13 @@
         /* Rooted Section                                                     */
         /**********************************************************************/
         .rooted-section {
-            background-color: var(--old-lace);
+            background-color: var(--bone);
             padding-top: 80px;
+        }
+
+        .rooted-section .subline {
+            background-color: var(--bone);
+            position: relative;
         }
 
         .rooted-stacked {
@@ -349,6 +356,46 @@
             flex-direction: column;
         }
 
+        .rooted-section-tree {
+            height: 200%;
+            position: absolute;
+            top: -120px;
+            z-index: 999;
+        }
+
+        .rooted-section-tree-two {
+            display: none;
+        }
+
+        @media (max-width: 1500px) {
+            .rooted-section .subline-big {
+                width: unset;
+            }
+
+            .rooted-section-tree {
+                height: 50vh;
+                top: -60px;
+                position: relative;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .rooted-section-tree {
+                display: none;
+            }
+        }
+
+        /* @media (max-width: 768px) {
+            
+
+            .rooted-section-tree-two {
+                display: inherit;
+                position: absolute;
+                bottom: -350px;
+                width: 100%;
+            }
+        } */
+        
         /**********************************************************************/
         /* Contact Section                                                    */
         /**********************************************************************/
@@ -440,16 +487,18 @@
                     <strong>with</strong>
                     <strong>Wild Impact</strong>
                 </div>
+                <img class="rooted-section-tree" src="tree.png" />
                 <div class="subline-small">
                     <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
                     <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
                 </div>
+                <img class="rooted-section-tree-two" src="tree.png" />
             </div>
         </section>
 
         <section class="contact-section" id="contact">
             <div class="container">
-                <h2>Ready to grow your brand?</h2>
+                <h2>Ready to Grow your Brand?</h2>
                 <p>Let's wander in the Moorlands</p>
                 <p>Email me at <a href="mailto:mazzarellaashley@gmail.com">mazzarellaashley@gmail.com</a></p>
             </div>

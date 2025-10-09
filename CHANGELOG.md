@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 2025-10-08
+
+- capitalize "Grow your Brand"
+- service bucket borders green
+- header fade thing should take up entire picture
+- make the colors off-white, then darker cream, then off-white
+- more of a fade into the body from splash
+
 ## 2025-10-07
 
 - fix overflow on mobile
