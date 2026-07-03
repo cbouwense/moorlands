@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## 2025-10-08
+## 2026-07-03
+
+
+
+## 2025-10-08 (v1)
 
 - capitalize "Grow your Brand"
 - service bucket borders green
