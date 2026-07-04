@@ -120,27 +120,30 @@
             position: relative;
         }
 
-        .hero-content {
+        .lockup {
+            width: 700px;
             color: var(--earth-green);
             z-index: 4;
             padding: 20px;
             overflow: visible;
         }
 
-        .hero-content svg {
-
+        .lockup img {
+            width: 80%;
         }
 
-        .hero-content h1 {
+        .lockup h1 {
+            width: 100%;
             font-family: var(--heading-font);
-            font-size: 10rem;
+            /* font-size: 10rem; */
             font-weight: 300;
             letter-spacing: 0.4rem;
             margin-bottom: 0;
             margin-top: 0;
         }
         
-        .hero-content h2 {
+        .lockup h2 {
+            width: 80%;
             font-family: var(--body-font);
             font-size: 1.75rem;
             font-weight: 400;
@@ -157,20 +160,20 @@
                 position: unset;
             }
 
-            .hero-content {
+            .lockup {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
 
-            .hero-content h1 {
+            .lockup h1 {
                 font-family: var(--heading-font);
                 font-size: 3rem;
                 margin-bottom: 0;
                 margin-top: 0;
             }
             
-            .hero-content h2 {
+            .lockup h2 {
                 font-size: 1.25rem;
                 font-style: italic;
                 font-weight: 400;
@@ -179,7 +182,7 @@
             }
 
             /* Transparent blob thing for contrast */
-            .hero-content::before {
+            .lockup::before {
                 content: '';
                 width: 100%;
                 height: 85%;
@@ -425,12 +428,14 @@
     </nav>
 
     <header class="hero" id="hero">
-        <div class="hero-content">
+        <div class="lockup">
             <img
                 src="./am-full-high-res.svg"
                 alt="Ashley Mazzarella initials in cursive"
             />
             <h1>MOORLANDS</h1>
+            <h2>ASHLEY MAZZARELLA</h2>
+            <h2>BRAND STRATEGY & WRITING</h2>
         </div>
     </header>
 
