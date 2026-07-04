@@ -20,12 +20,13 @@
         }
 
         :root {
-            --background-primary: #EFEEE9;
+            --background-color: #EFEEE9;
             --outline-color: #DAD1C4;
             --button-color: #DAD9D0;
             
-            --dark-green: #878A75;
-            --light-green: #CFC8BD;
+            /* NOTE: svg original green #6F7755 */
+            --dark-green: #353826;
+            --light-green: #878A75;
             
             --primary-text-color: #3A3F2E;
             --body-text-color: #262421;
@@ -128,7 +129,6 @@
 
         .lockup {
             width: 50vw;
-            color: var(--earth-green);
             z-index: 4;
             padding: 20px;
             overflow: visible;
@@ -142,31 +142,41 @@
             margin-right: 0;
         }
 
+        .long-boi {
+            width: 3rem;
+        }
+
         .lockup img {
-            width: 70%;
+            width: 65%;
         }
 
         .lockup h1 {
             width: 100%;
+            margin-top: -4.5rem;
+            margin-bottom: -2rem;
             font-family: var(--heading-font);
             font-size: 10rem;
             font-weight: 300;
             letter-spacing: 0.4rem;
+            color: var(--dark-green);
         }
         
         .lockup h2 {
-            width: 80%;
+            width: 100%;
             font-family: var(--body-font);
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 400;
-            letter-spacing: 0.7rem;
+            letter-spacing: 1rem;
+            color: var(--light-green);
         }
-
+        
         .lockup h3 {
+            width: 100%;
             font-family: var(--body-font);
-            font-size: 1rem;
+            font-size: 1.33rem;
             font-weight: 400;
             letter-spacing: 0.7rem;
+            color: var(--light-green);
         }
 
         /* Mobile */
@@ -455,8 +465,8 @@
             />
             <h1 class="no-margin">MOORLANDS</h1>
             <h2 class="no-margin">ASHLEY MAZZARELLA</h2>
-            <h3 class="no-margin">BRAND STRATEGY & WRITING</h2>
-            <h3 class="no-margin">&mdash;</h2>
+            <h3>BRAND STRATEGY & WRITING</h2>
+            <h3 class="no-margin long-boi">&mdash;</h2>
         </div>
     </header>
 
