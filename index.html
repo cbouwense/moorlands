@@ -30,20 +30,20 @@
             
             --primary-text-color: #3A3F2E;
             --body-text-color: #262421;
-            
             --copy-primary: #3A3F2E;
             
-            --heading-font: 'Cormorant', serif;
-            --body-font: 'Inter', sans-serif;
+            --heading-primary-font: 'Cormorant', serif;
+            --heading-secondary-font: 'Inter', sans-serif;
+            --body-font: Inter, sans-serif;
         }
 
         body {
-            font-family: var(--body-font);
-            color: var(--text-body);
+            font-family: var(--heading-secondary-font);
+            color: var(--primary-text-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: var(--background-primary);
+            background-color: var(--background-color);
             width: 100%;
         }
 
@@ -81,21 +81,21 @@
 
         nav a {
             height: 100%;
-            color: var(--charcoal-black);
+            color: var(--dark-green);
             text-decoration: none;
-            font-family: var(--heading-font);
+            font-family: var(--heading-primary-font);
             font-weight: 500;
             font-size: 1.75rem;
             display: flex;
             align-items: center;
         }
-
+        
         a:link {
-            color: var(--charcoal-black);
+            color: var(--dark-green);
         }
-
+        
         a:visited {
-            color: var(--charcoal-black);
+            color: var(--dark-green);
         }
 
         /* Mobile */
@@ -154,7 +154,7 @@
             width: 100%;
             margin-top: -4.5rem;
             margin-bottom: -2rem;
-            font-family: var(--heading-font);
+            font-family: var(--heading-primary-font);
             font-size: 10rem;
             font-weight: 300;
             letter-spacing: 0.4rem;
@@ -163,7 +163,7 @@
         
         .lockup h2 {
             width: 100%;
-            font-family: var(--body-font);
+            font-family: var(--heading-secondary-font);
             font-size: 2.5rem;
             font-weight: 400;
             letter-spacing: 1rem;
@@ -172,7 +172,7 @@
         
         .lockup h3 {
             width: 100%;
-            font-family: var(--body-font);
+            font-family: var(--heading-secondary-font);
             font-size: 1.33rem;
             font-weight: 400;
             letter-spacing: 0.7rem;
@@ -196,7 +196,7 @@
             }
 
             .lockup h1 {
-                font-family: var(--heading-font);
+                font-family: var(--heading-primary-font);
                 font-size: 3rem;
                 margin-bottom: 0;
                 margin-top: 0;
@@ -245,14 +245,14 @@
         }
 
         .subline-big {
-            font-family: var(--heading-font);
+            font-family: var(--heading-primary-font);
             text-align: left;
-            color: var(--bark);
             margin-top: 0;
             font-size: 4rem;
             line-height: 1;
             margin-bottom: 40px;
-            width: 50%
+            width: 50%;
+            color: var(--dark-green);
         }
 
         .subline-small {
@@ -261,6 +261,7 @@
             line-height: 1.8;
             margin-bottom: 40px;
             width: 25%;
+            color: var(--body-text-color)
         }
 
         @media (max-width: 768px) {
@@ -308,10 +309,10 @@
         }
 
         .services-section h2 {
-            font-family: var(--heading-font);
+            font-family: var(--heading-primary-font);
             text-align: center;
             font-size: 2.5rem;
-            color: var(--bark);
+            color: var(--dark-green);
             margin-bottom: 40px;
         }
 
@@ -334,9 +335,9 @@
         }
 
         .service-card h3 {
-            font-family: var(--body-font);
+            font-family: var(--heading-secondary-font);
             font-size: 1.5rem;
-            color: var(--earth-green);
+            color: var(--dark-green);
             margin-bottom: 10px;
         }
 
@@ -430,9 +431,9 @@
         }
 
         .contact-section h2 {
-            font-family: var(--heading-font);
+            font-family: var(--heading-primary-font);
             font-size: 2.5rem;
-            color: var(--bark);
+            color: var(--dark-green);
         }
         
         .contact-section p {
