@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <style>
         html {
@@ -26,7 +26,7 @@
             --outline-color: #DAD1C4;
             --button-color: #DAD9D0;
             
-            --heading-font: 'Lora', serif;
+            --heading-font: 'Cormorant', serif;
             --body-font: 'Inter', sans-serif;
         }
 
@@ -120,15 +120,6 @@
             position: relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
         .hero-content {
             color: var(--earth-green);
             z-index: 4;
@@ -136,9 +127,15 @@
             overflow: visible;
         }
 
+        .hero-content svg {
+
+        }
+
         .hero-content h1 {
             font-family: var(--heading-font);
-            font-size: 5rem;
+            font-size: 10rem;
+            font-weight: 300;
+            letter-spacing: 0.4rem;
             margin-bottom: 0;
             margin-top: 0;
         }
@@ -433,6 +430,7 @@
                 src="./am-full-high-res.svg"
                 alt="Ashley Mazzarella initials in cursive"
             />
+            <h1>MOORLANDS</h1>
         </div>
     </header>
 
