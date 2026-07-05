@@ -78,6 +78,13 @@
             left: 20px;
         }
 
+        /* Mobile */
+        @media (max-width: 768px) {
+            .top-left-icon {
+                display: none;
+            }
+        }
+
         /**********************************************************************/
         /* Nav                                                                */
         /**********************************************************************/
@@ -134,15 +141,10 @@
         .hero {
             height: 75vh;
             
-            background-size: cover;
-            background-position: left top, center -100px;
-
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-
-            position: relative;
         }
 
         .lockup {
@@ -195,24 +197,35 @@
 
         /* Mobile */
         @media (max-width: 768px) {           
+            .hero {
+                height: 85vh;
+            }
+
             .lockup {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                width: 100%;
+                /* padding: 20px; */
+                /* overflow: visible; */
+            }
+
+            .lockup img {
+                width: 65%;
             }
 
             .lockup h1 {
-                font-size: 3rem;
+                margin-top: -1rem;
                 margin-bottom: 0;
-                margin-top: 0;
+                font-family: var(--main-heading-font);
+                font-size: 3rem;
             }
             
             .lockup h2 {
-                font-size: 1.25rem;
-                font-style: italic;
-                font-weight: 400;
-                margin-top: 5px;
-                max-width: 75%;
+                font-size: 1rem;
+                letter-spacing: 0.5rem;
+            }
+            
+            .lockup h3 {
+                font-size: 0.75rem;
+                letter-spacing: 0.5rem;
             }
         }
 
@@ -489,26 +502,10 @@
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .formbold--mx-3 {
-            margin-left: -12px;
-            margin-right: -12px;
-        }
-        .formbold-px-3 {
-            padding-left: 12px;
-            padding-right: 12px;
-        }
-        .flex {
-            display: flex;
-        }
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-        .w-full {
-            width: 100%;
-        }
-        @media (min-width: 540px) {
-            .sm\:w-half {
-            width: 50%;
+        /* Mobile */
+        @media (max-width: 768px) {
+            .formbold-main-wrapper {
+                padding: 0;
             }
         }
     </style>
@@ -615,53 +612,53 @@
                 <!-- Learn More: https://formbold.com -->
                 <div class="formbold-form-wrapper">
                     <form action="https://formbold.com/s/3La2y" method="POST">
-                    <div class="formbold-mb-5">
-                        <label for="name" class="formbold-form-label"> Full Name </label>
-                        <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Full Name"
-                        class="formbold-form-input"
-                        />
-                    </div>
-                
-                    <div class="formbold-mb-5">
-                        <label for="email" class="formbold-form-label"> Email Address </label>
-                        <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        class="formbold-form-input"
-                        />
-                    </div>
-                
-                    <div class="formbold-mb-5">
-                        <label for="subject" class="formbold-form-label"> Subject </label>
-                        <input
-                        type="text"
-                        name="subject"
-                        id="subject"
-                        placeholder="Enter your subject"
-                        class="formbold-form-input"
-                        />
-                    </div>
-                
-                    <div class="formbold-mb-5">
-                        <label for="message" class="formbold-form-label"> Message </label>
-                        <textarea
-                        rows="6"
-                        name="message"
-                        id="message"
-                        placeholder="Type your message"
-                        class="formbold-form-input"
-                        ></textarea>
-                    </div>
-                
-                    <div>
-                        <button class="formbold-btn">Submit</button>
-                    </div>
+                        <div class="formbold-mb-5">
+                            <label for="name" class="formbold-form-label"> Full Name </label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Full Name"
+                                class="formbold-form-input"
+                            />
+                        </div>
+                    
+                        <div class="formbold-mb-5">
+                            <label for="email" class="formbold-form-label"> Email Address </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                class="formbold-form-input"
+                            />
+                        </div>
+                    
+                        <div class="formbold-mb-5">
+                            <label for="subject" class="formbold-form-label"> Subject </label>
+                            <input
+                                type="text"
+                                name="subject"
+                                id="subject"
+                                placeholder="Enter your subject"
+                                class="formbold-form-input"
+                            />
+                        </div>
+                    
+                        <div class="formbold-mb-5">
+                            <label for="message" class="formbold-form-label"> Message </label>
+                            <textarea
+                                rows="6"
+                                name="message"
+                                id="message"
+                                placeholder="Type your message"
+                                class="formbold-form-input"
+                            ></textarea>
+                        </div>
+                    
+                        <div>
+                            <button class="formbold-btn">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
