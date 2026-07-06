@@ -159,7 +159,7 @@
         }
 
         .lockup img {
-            width: clamp(400px, 40vw, 1500px);
+            width: clamp(300px, 30vw, 1300px);
         }
 
         .lockup h1 {
@@ -214,6 +214,14 @@
             line-height: 1;
             margin-bottom: 40px;
             width: 50%;
+            color: var(--dark-green);
+        }
+    
+        .subline-big h3 {
+            font-family: var(--primary-font);
+            font-size: clamp(10px, 2vw, 20px);
+            /* font-weight: var(--heading-font-weight); */
+            /* letter-spacing: 0.7rem; */
             color: var(--dark-green);
         }
 
@@ -492,11 +500,11 @@
 
     <header id="hero">
         <div class="lockup">
-            <!-- <img
+            <img
                 class="no-margin"
                 src="./am-full-high-res.svg"
                 alt="Ashley Mazzarella initials in cursive"
-            /> -->
+            />
             <h1 class="no-margin">MOORLANDS</h1>
             <h2 class="no-margin">ASHLEY MAZZARELLA</h2>
             <h3>BRAND STRATEGY & WRITING</h2>
@@ -507,7 +515,7 @@
     <main>
         <section class="headline-section">
             <div class="subline">
-                <div class="subline-big">Your Brand's Strength Comes from the Story that Anchors it</div>
+                <div class="subline-big">Your Brand's Strength Comes from the Story that Anchors It</div>
                 <div class="subline-small">I'm Ashley Mazzarella—brand strategist and writer. In every facet of my work, I dig to the root of your story and help it grow into a brand that is authentic, resonant, and enduring.</div>
             </div>
         </section>
@@ -557,11 +565,16 @@
         <section class="rooted-section" id="rooted">
             <div class="subline">
                 <div class="subline-big rooted-stacked">
-                    <span>Rooted Stories</span>
-                    <span>with</span>
-                    <span>Wild Impact</span>
+                    <h3>About</h3>
+                    <span>WELCOME TO</span>
+                    <span>THE MOORLANDS</span>
                 </div>
                 <div class="subline-small">
+                    <div class="subline-big rooted-stacked">
+                        <span>Rooted Stories</span>
+                        <span>with</span>
+                        <span>Wild Impact</span>
+                    </div>
                     <p>The moorlands, with their striking landscapes and untamed vitality, have long inspired culture-shaping stories. Amid the wild ecosystem, many literary heroes have been tested and transformed.</p>
                     <p>I work within the wilds of the moor—away from the cluttered metropolis of clichés and conventions—to uncover what makes your story unique and your brand resonant.</p>
                 </div>
@@ -573,58 +586,59 @@
                 <h2>Ready to Grow Your Brand?</h2>
                 <p>Let's wander in the Moorlands</p>
                 <div class="formbold-main-wrapper">
-                <!-- Author: FormBold Team -->
-                <!-- Learn More: https://formbold.com -->
-                <div class="formbold-form-wrapper">
-                    <form action="https://formbold.com/s/3La2y" method="POST">
-                        <div class="formbold-mb-5">
-                            <label for="name" class="formbold-form-label"> Full Name </label>
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                placeholder="Full Name"
-                                class="formbold-form-input"
-                            />
-                        </div>
-                    
-                        <div class="formbold-mb-5">
-                            <label for="email" class="formbold-form-label"> Email Address </label>
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="Enter your email"
-                                class="formbold-form-input"
-                            />
-                        </div>
-                    
-                        <div class="formbold-mb-5">
-                            <label for="subject" class="formbold-form-label"> Subject </label>
-                            <input
-                                type="text"
-                                name="subject"
-                                id="subject"
-                                placeholder="Enter your subject"
-                                class="formbold-form-input"
-                            />
-                        </div>
-                    
-                        <div class="formbold-mb-5">
-                            <label for="message" class="formbold-form-label"> Message </label>
-                            <textarea
-                                rows="6"
-                                name="message"
-                                id="message"
-                                placeholder="Type your message"
-                                class="formbold-form-input"
-                            ></textarea>
-                        </div>
-                    
-                        <div>
-                            <button class="formbold-btn">Submit</button>
-                        </div>
-                    </form>
+                    <!-- Author: FormBold Team -->
+                    <!-- Learn More: https://formbold.com -->
+                    <div class="formbold-form-wrapper">
+                        <form action="https://formbold.com/s/3La2y" method="POST">
+                            <div class="formbold-mb-5">
+                                <label for="name" class="formbold-form-label"> Full Name </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Full Name"
+                                    class="formbold-form-input"
+                                />
+                            </div>
+                        
+                            <div class="formbold-mb-5">
+                                <label for="email" class="formbold-form-label"> Email Address </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                    class="formbold-form-input"
+                                />
+                            </div>
+                        
+                            <div class="formbold-mb-5">
+                                <label for="subject" class="formbold-form-label"> Subject </label>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    id="subject"
+                                    placeholder="Enter your subject"
+                                    class="formbold-form-input"
+                                />
+                            </div>
+                        
+                            <div class="formbold-mb-5">
+                                <label for="message" class="formbold-form-label"> Message </label>
+                                <textarea
+                                    rows="6"
+                                    name="message"
+                                    id="message"
+                                    placeholder="Type your message"
+                                    class="formbold-form-input"
+                                ></textarea>
+                            </div>
+                        
+                            <div>
+                                <button class="formbold-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
