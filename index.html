@@ -219,7 +219,7 @@
     
         .subline-big h3 {
             font-family: var(--primary-font);
-            font-size: clamp(10px, 2vw, 20px);
+            font-size: clamp(20px, 2vw, 30px);
             /* font-weight: var(--heading-font-weight); */
             /* letter-spacing: 0.7rem; */
             color: var(--dark-green);
@@ -372,6 +372,30 @@
 
         .rooted-section-tree-two {
             display: none;
+        }
+        
+        .logo-background {
+            position: relative; /* Keeps the pseudo-element contained */
+            z-index: 1;         /* Keeps your text on top */
+        }
+        
+        .logo-background::before {
+            content: "";
+            position: absolute;
+            
+            /* Stick to the top and bottom, but pull outside on the sides */
+            top: 0;
+            bottom: 0;
+            left: -100px;  /* Pokes out 50px to the left */
+            right: -100px; /* Pokes out 50px to the right */
+                        
+            background-image: url("am-full-high-res.svg");
+            background-size: auto 75%;
+            background-repeat: no-repeat;
+            background-position-x: 50%;
+            
+            opacity: 0.3; /* Makes ONLY the image 50% opaque */
+            z-index: -1;  /* Pushes the image behind your text */
         }
 
         @media (max-width: 1500px) {
@@ -564,7 +588,7 @@
 
         <section class="rooted-section" id="rooted">
             <div class="subline">
-                <div class="subline-big rooted-stacked">
+                <div class="subline-big rooted-stacked logo-background">
                     <h3>About</h3>
                     <span>WELCOME TO</span>
                     <span>THE MOORLANDS</span>
