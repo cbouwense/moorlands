@@ -13,6 +13,8 @@
     <style>
         html {
             box-sizing: border-box;
+            /* Prevent horizontal scroll on mobile */
+            overflow-x: hidden; 
         }
 
         *, *:before, *:after {
@@ -26,10 +28,6 @@
 
         .no-margin {
             margin: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
         }
 
         :root {
@@ -38,7 +36,6 @@
             --terrible-button-color: #D6CEF1;
             --button-color: #6a64f1;
             
-            /* NOTE: svg original green #6F7755 */
             --dark-green: #353826;
             --light-green: #878A75;
             
@@ -61,6 +58,7 @@
             line-height: 1.6;
             background-color: var(--background-color);
             width: 100%;
+            overflow-x: hidden; /* Added to constrain full-width pseudo-elements */
         }
 
         main {
@@ -128,19 +126,23 @@
             text-decoration: underline;
         }
 
-        a:link {
-            color: var(--dark-green);
-        }
-        
-        a:visited {
+        a:link, a:visited {
             color: var(--dark-green);
         }
 
         /* Mobile */
         @media (max-width: 768px) {
             nav {
-                justify-content: space-evenly;
-                gap: unset;
+                justify-content: center;
+                gap: 1.5rem;
+                padding: 1rem 20px;
+                height: auto;
+                flex-wrap: wrap; /* Allows links to stack safely on very small screens */
+            }
+            nav a {
+                height: auto;
+                font-size: 14px;
+                padding: 5px 0;
             }
         }
         
@@ -150,7 +152,6 @@
         .lockup {
             width: 100%;
             height: 75vh;
-            
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -190,6 +191,7 @@
         @media (max-width: 768px) {
             .lockup {
                 height: 85vh;
+                margin-top: 5vh; /* Accounts for wrapped navigation */
             }
         }
 
@@ -211,7 +213,7 @@
             text-align: left;
             margin-top: 0;
             font-size: 4rem;
-            line-height: 1;
+            line-height: 1.2;
             margin-bottom: 40px;
             width: 50%;
             color: var(--dark-green);
@@ -220,8 +222,6 @@
         .subline-big h3 {
             font-family: var(--primary-font);
             font-size: clamp(20px, 2vw, 30px);
-            /* font-weight: var(--heading-font-weight); */
-            /* letter-spacing: 0.7rem; */
             color: var(--dark-green);
         }
 
@@ -234,23 +234,26 @@
             color: var(--body-text-color)
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
             .subline {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
                 width: 100%;
-                padding: 0 20px;
-                line-height: 1.8;
+                padding: 0;
+                line-height: 1.6;
                 margin-bottom: 40px;
             }
 
             .subline-big {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
                 width: 100%;
+                margin-bottom: 10px;
             }
 
             .subline-small {
                 width: 100%;
+                margin-bottom: 20px;
             }
         }
 
@@ -266,8 +269,7 @@
         /* Mobile */
         @media (max-width: 768px) {
             .headline-section {
-                padding-top: 0;
-                text-align: center;
+                padding-top: 40px; /* Gives proper breathing room on mobile */
             }
         }
         
@@ -330,22 +332,35 @@
 
         .service-card ul li {
             margin-bottom: 5px;
+            padding-left: 10px;
+            position: relative;
         }
 
         /* Mobile */
         @media (max-width: 768px) {
+            .services-section {
+                margin: 40px 0;
+            }
+
             .services-cards {
                 display: flex;
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
             }
 
             .service-card:hover {
-                transform: unset;
+                transform: none; /* Disable hover jumps on mobile */
             }
 
             .service-card h3 {
-                margin: 0;
+                margin: 0 0 5px 0;
+            }
+            
+            .service-card ul {
+                text-align: center; /* Center bullets on mobile for a cleaner look */
+            }
+            .service-card ul li {
+                padding-left: 0;
             }
         }
 
@@ -379,27 +394,23 @@
         }
         
         .logo-background {
-            position: relative; /* Keeps the pseudo-element contained */
-            z-index: 1;         /* Keeps your text on top */
+            position: relative; 
+            z-index: 1;         
         }
         
         .logo-background::before {
             content: "";
             position: absolute;
-            
-            /* Stick to the top and bottom, but pull outside on the sides */
             top: 0;
             bottom: 0;
-            left: -100px;  /* Pokes out 50px to the left */
-            right: -100px; /* Pokes out 50px to the right */
-                        
+            left: -100px;  
+            right: -100px; 
             background-image: url("am-full-high-res.svg");
             background-size: auto 75%;
             background-repeat: no-repeat;
             background-position-x: 50%;
-            
-            opacity: 0.3; /* Makes ONLY the image 50% opaque */
-            z-index: -1;  /* Pushes the image behind your text */
+            opacity: 0.3; 
+            z-index: -1;  
         }
 
         @media (max-width: 1500px) {
@@ -419,6 +430,19 @@
                 display: none;
             }
         }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .rooted-section {
+                padding-top: 40px;
+            }
+            .logo-background::before {
+                left: -20px; /* Constrain the background bleed on small screens */
+                right: -20px;
+                background-size: 80% auto;
+                background-position-y: 50%;
+            }
+        }
         
         /**********************************************************************/
         /* Contact Section                                                    */
@@ -429,10 +453,11 @@
         }
 
         .contact-section h2 {
-            font-family: var(--heading-primary-font);
+            font-family: var(--primary-font);
             font-weight: var(--heading-font-weight);
             font-size: 2.5rem;
             color: var(--dark-green);
+            margin-bottom: 10px;
         }
         
         .contact-section p {
@@ -445,10 +470,6 @@
         /**********************************************************************/
         .formbold-mb-5 {
             margin-bottom: 20px;
-        }
-
-        .formbold-pt-3 {
-            padding-top: 12px;
         }
 
         .formbold-main-wrapper {
@@ -475,7 +496,7 @@
             width: 100%;
             padding: 12px 24px;
             border-radius: 6px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--outline-color);
             background: white;
             font-weight: 500;
             color: #6b7280;
@@ -484,7 +505,7 @@
         }
 
         .formbold-form-input:focus {
-            border-color: #6a64f1;
+            border-color: var(--button-color);
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
         }
 
@@ -497,15 +518,25 @@
             background-color: var(--light-green);
             color: white;
             cursor: pointer;
+            width: 100%; /* Make button full width on forms */
+            transition: background-color 0.3s;
         }
+
         .formbold-btn:hover {
             box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+            background-color: var(--dark-green);
         }
 
         /* Mobile */
         @media (max-width: 768px) {
+            .contact-section {
+                padding: 40px 0;
+            }
             .formbold-main-wrapper {
                 padding: 0;
+            }
+            .formbold-btn {
+                padding: 16px 32px; /* Slightly larger tap target */
             }
         }
 
@@ -516,15 +547,18 @@
         footer {
             display: flex;
             justify-content: center;
-            align-items: end;
+            align-items: center;
             gap: 2rem;
-
             padding: 2rem;
+            background-color: var(--dark-green); /* Optional grounded footer look */
         }
 
         .social-logo {
-           /* background-color: black; */
-           color: red; 
+            transition: opacity 0.3s;
+        }
+        
+        .social-logo:hover {
+            opacity: 0.8;
         }
 
     </style>
@@ -555,8 +589,8 @@
             />
             <h1 class="no-margin">MOORLANDS</h1>
             <h2 class="no-margin">ASHLEY MAZZARELLA</h2>
-            <h3>BRAND STRATEGY & WRITING</h2>
-            <h3 class="no-margin long-boi">&mdash;</h2>
+            <h3>BRAND STRATEGY & WRITING</h3>
+            <h3 class="no-margin long-boi">&mdash;</h3>
         </div>
     </header>
 
@@ -634,17 +668,17 @@
                 <h2>Testimonials</h2>
                 <div class="services-cards">
                     <div class="service-card">
-                        <p>Working with Ashley was a game-changer for our brand. She simplified our complex messaging into a clear, compelling narrative that resonated with our audience. The project was delivered on time, and the results speak for themselves.</p>
+                        <p>"Working with Ashley was a game-changer for our brand. She simplified our complex messaging into a clear, compelling narrative that resonated with our audience. The project was delivered on time, and the results speak for themselves."</p>
                         <h3>John Doe</h3>
                         <h4>VP of Brand Strategy at Bilby</h4>
                     </div>
                     <div class="service-card">
-                        <p>Ashley transformed our fragmented brand voice into a cohesive story that truly connects with our customers. Their strategic insight and creative execution elevated our entire marketing presence, making them an indispensable partner in our growth.</p>
+                        <p>"Ashley transformed our fragmented brand voice into a cohesive story that truly connects with our customers. Their strategic insight and creative execution elevated our entire marketing presence, making them an indispensable partner in our growth."</p>
                         <h3>Jane Doe</h3>
                         <h4>Director of Marketing at Google</h4>
                     </div>
                     <div class="service-card">
-                        <p>Ashley didn't just refresh our logo; they redefined our entire market position. Their strategic clarity turned our vague ideas into a powerful brand story that doubled our inbound leads in just one quarter. They are a true partner in growth.</p>
+                        <p>"Ashley didn't just refresh our logo; they redefined our entire market position. Their strategic clarity turned our vague ideas into a powerful brand story that doubled our inbound leads in just one quarter. They are a true partner in growth."</p>
                         <h3>Joe Schmoe</h3>
                         <h4>Chief Marketing Officer at Splootdoot</h4>
                     </div>
@@ -657,8 +691,6 @@
                 <h2>Ready to Grow Your Brand?</h2>
                 <p>Let's wander in the Moorlands</p>
                 <div class="formbold-main-wrapper">
-                    <!-- Author: FormBold Team -->
-                    <!-- Learn More: https://formbold.com -->
                     <div class="formbold-form-wrapper">
                         <form action="https://formbold.com/s/3La2y" method="POST">
                             <div class="formbold-mb-5">
